@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue&family=Damion&family=Rubik&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@500&display=swap');
+@import "./mixins";
+@include mobile-mods();
+@include loader();
+@include error();
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+blockquote {
+    text-align: center;
+    font-style: italic;
+    font-size: 38px;
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+}
+figcaption {
+    text-align: center;
+    font-size: 24px;
+    font-family: 'Comic Neue', cursive;
+}
+.main-container {
+    @include fade-in-adv();
+}
+.bg-image {
+    position: relative;
+}
+.icon-c {
+    @include m-y(5px, 0px);
+    @include m-x(20px, 0px);
+    color: rgba(240, 248, 255, 0.61);
+    font-size: 4.2em;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.main {
+    width: 1000px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+.quote {
+    @include display-type(flex, row, flex-start, center);
+}
+.author {
+    @include display-type(flex, row, flex-end, center);
+}
+.new-btn {
+    @include display-type(flex, row, center, center);
+    @include m-x(0px, 10px);
+    @include m-y(0px, 10px);
+    border: transparent;
+    font-size: 25px;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transition: 250ms ease-in-out;
+    & > * {
+        margin: 0;
+    }
+    &:hover {
+        transform: scale(0.9);
+    }
+    &:active {
+        transform: scale(0.7);
+    }
+}
+.fade-out {
+    @include fade-out();
+}
