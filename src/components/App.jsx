@@ -23,7 +23,6 @@ const App = (props) => {
     }
     useEffect(() => {
         dataManager()
-        console.log('weed')
     }, [reRender])
     if (render === 'Success') {
         return (
